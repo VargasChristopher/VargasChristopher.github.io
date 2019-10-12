@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MC Genius</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header id="home">
+        <div class= "menu">
+          <span class="bar"></span>
+        </div>
+
+        <nav class="nav">
+          <a href="index.html" id="logo"><img src="images/logo.png" style="height: 100px; width: 100px;"></a>
+          <div class="overlay">
+
+          </div>
+        </nav>
+
+        <!-- The Modal (contains the form) -->
+        <div id="id01" class="modal">
+        <span onclick="closeForm()" class="close" title="Close Modal">Close</span>
+        <form class="modal-content">
+        <div class="modalContainer">
+          <h1>Product Data</h1>
+          <p>Which of the following cannabis product characteristics are you primarily interested in?</p>
+          <hr>
+
+          <div class="clearfix">
+            <button type="submit" class="signup" onclick="openForm2()">Composition</button>
+            <button type="submit" class="signup" onclick="openForm3()">Formulation</button>
+            <button type="submit" class="signup" onclick="openForm4()">Dosage</button>
+            <button type="submit" class="signup" onclick="openForm5()">Species</button>
+          </div>
+        </div>
+        </form>
+        </div>
+
+        <div id="id02" class="modal">
+        <span onclick="closeForm2()" class="close" title="Close Modal">Close</span>
+        <form class="modal-content">
+        <div class="modalContainer">
+          <h1>Composition Data</h1>
+          <p>Please select one of the following cannabis product components:</p>
+          <hr>
+
+          <div class="clearfix">
+            <button type="submit" class="signup" >THC Content</button>
+            <button type="submit" class="signup" >Dominant Terpene</button>
+            <button type="submit" class="signup" >CBD Content</button>
+          </div>
+        </div>
+        </form>
+        </div>
+
+        <div id="id03" class="modal">
+        <span onclick="closeForm3()" class="close" title="Close Modal">Close</span>
+        <form class="modal-content">
+        <div class="modalContainer">
+          <h1>Formulation Data</h1>
+          <p>Which of the following cannabis formulations are you interested in?</p>
+          <hr>
+
+          <div class="clearfix">
+            <button type="submit" class="signup" >Flower</button>
+            <button type="submit" class="signup" >Infused Food</button>
+            <button type="submit" class="signup" >Topical Formulations</button>
+            <button type="submit" class="signup" >Tincture</button>
+            <button type="submit" class="signup" >Concentrate</button>
+          </div>
+        </div>
+        </form>
+        </div>
+
+        <div id="id04" class="modal">
+        <span onclick="closeForm4()" class="close" title="Close Modal">Close</span>
+        <form class="modal-content">
+        <div class="modalContainer">
+          <h1>Dosage Data</h1>
+          <p>Which of the following cannabis dose categories are you interested in?</p>
+          <hr>
+
+          <div class="clearfix">
+            <button type="submit" class="signup" >Low Dose</button>
+            <button type="submit" class="signup" >Medium Dose</button>
+            <button type="submit" class="signup" >High Dose</button>
+          </div>
+        </div>
+        </form>
+        </div>
+
+        <div id="id05" class="modal">
+        <span onclick="closeForm5()" class="close" title="Close Modal">Close</span>
+        <form class="modal-content">
+        <div class="modalContainer">
+          <h1>Species Data</h1>
+          <p>Which of the following cannabis species are you interested in?</p>
+          <hr>
+
+          <div class="clearfix">
+            <button type="submit" class="signup" >Indica</button>
+            <button type="submit" class="signup" >Hybrid</button>
+            <button type="submit" class="signup" >Sativa</button>
+          </div>
+        </div>
+        </form>
+        </div>
+
+        <div id="id06" class="modal">
+        <span onclick="closeForm6()" class="close" title="Close Modal">Close</span>
+        <form class="modal-content">
+        <div class="modalContainer">
+          <h1>Qualifying Conditions</h1>
+          <p>Which of the following qualifying conditions are you interested in?</p>
+          <hr>
+
+          <div class="clearfix">
+            <button type="submit" class="signup" >ALS</button>
+            <button type="submit" class="signup" >Anxiety</button>
+            <button type="submit" class="signup" >Autism</button>
+            <button type="submit" class="signup" >Cancer</button>
+            <button type="submit" class="signup" >Crohn's</button>
+
+            <button type="submit" class="signup" >Epilepsy</button>
+            <button type="submit" class="signup" >Glaucoma</button>
+            <button type="submit" class="signup" >HIV/AIDS</button>
+            <button type="submit" class="signup" >Huntington's</button>
+            <button type="submit" class="signup" >IBD</button>
+
+            <button type="submit" class="signup" >Intractable seizures</button>
+            <button type="submit" class="signup" >Multiple Sclerosis</button>
+            <button type="submit" class="signup" >Neuropathies</button>
+            <button type="submit" class="signup" onclick="openFormPt()">Opioid Use Disorder</button>
+            <button type="submit" class="signup" >Parkinson's</button>
+
+            <button type="submit" class="signup" >PTSD</button>
+            <button type="submit" class="signup" >Chronic Pain</button>
+            <button type="submit" class="signup" >Sickle Cell Anemia</button>
+            <button type="submit" class="signup" >Terminal Illness</button>
+            <button type="submit" class="signup" >Tourette Syndrome</button>
+          </div>
+        </div>
+        </form>
+        </div>
+
+        <div id="idPt" class="modal">
+        <span onclick="closeFormPt()" class="close" title="Close Modal">Close</span>
+        <form class="modal-content">
+        <div class="modalContainer">
+          <h1>Patient Data</h1>
+          <p>Please select any relevant patient-specific considerations:</p>
+          <hr>
+
+          <div class="clearfix">
+            <h1>Age</h1>
+            <button type="submit" class="signup" >18 - 40</button>
+            <button type="submit" class="signup" >41 - 60</button>
+            <button type="submit" class="signup" >61 - 80</button>
+            <button type="submit" class="signup" >> 80</button>
+
+            <h1>Sex</h1>
+            <button type="submit" class="signup" >Male</button>
+            <button type="submit" class="signup" >Female</button>
+
+            <h1>Goal of Therapy</h1>
+            <button type="submit" class="signup" >Improve QOL</button>
+            <button type="submit" class="signup" >Improve Clinical Status</button>
+
+            <h1>Is cost a concern?</h1>
+            <button type="submit" class="signup" >Yes</button>
+            <button type="submit" class="signup" >No</button>
+
+            <h1>Continue?</h1>
+            <button type="submit" class="signup" onclick="openFormReg()">Go</button>
+          </div>
+        </div>
+        </form>
+        </div>
+
+        <div id="idReg" class="modal">
+        <span onclick="closeFormReg()" class="close" title="Close Modal">Close</span>
+        <form class="modal-content">
+        <div class="modalContainer">
+          <h1>Regimen Data</h1>
+          <p>For regimen-specific support, please describe a proposed regimen:</p>
+          <hr>
+
+          <div class="clearfix">
+            <h1>Formulation</h1>
+            <button type="submit" class="signup" >Flower</button>
+            <button type="submit" class="signup" >Infused Food</button>
+            <button type="submit" class="signup" >Tincture</button>
+            <button type="submit" class="signup" >Topical</button>
+            <button type="submit" class="signup" >Concentrate</button>
+
+            <h1>Dominant Component</h1>
+            <button type="submit" class="signup" >THC</button>
+            <button type="submit" class="signup" >CBD</button>
+
+            <h1>Species</h1>
+            <button type="submit" class="signup" >Indica</button>
+            <button type="submit" class="signup" >Hybrid</button>
+            <button type="submit" class="signup" >Sativa</button>
+
+            <h1>Dosage</h1>
+            <button type="submit" class="signup" >Low</button>
+            <button type="submit" class="signup" >Medium</button>
+            <button type="submit" class="signup" >High</button>
+
+            <h1>Daily Dosage Frequency</h1>
+            <button type="submit" class="signup" >< 1 Dose</button>
+            <button type="submit" class="signup" >1 dose</button>
+            <button type="submit" class="signup" >2-3 doses</button>
+            <button type="submit" class="signup" >> 3 doses</button>
+
+            <h1>Continue?</h1>
+            <button type="submit" class="signup" onclick="openFormResults()">Go</button>
+          </div>
+        </div>
+        </form>
+        </div>
+
+        <div id="idRes" class="modal">
+        <span onclick="closeFormResults()" class="close" title="Close Modal">Close</span>
+        <form class="modal-content">
+        <div class="modalContainer">
+          <h1>Opioid Use Disorder Regimen</h1>
+          <hr>
+
+          <div class="clearfix" style="text-align:left">
+            <h1>High-Dose, CBD-dominant, C. indica-Infused Food PO Q24H
+
+  <p>- Patient Description: 18 - 40 y.o. M w/ OUD seeking to improve clinical status despite budgetary constraints.</p>
+  <p>- Comorbidities: CF and tobacco use disorder</p>
+
+  <br>
+
+  <h1>Patient Reported Outcomes (PROs):</h1>
+
+  <p>MC Genius retrieved <strong>3,678 similar PROs</strong> evaluating this cannabis regimen:</p>
+  <p>- Average change in Subjective Opioid Withdrawal Scale (SOWS) = 2.1 points</p>
+  <p>- Average 15 min. pre-dose SOWS = 11/64 (moderate-to-severe-withdrawal)</p>
+  <p>- Average 2-hr. post-dose SOWS = 8.9/64 (mild-to-moderate withdrawal)</p>
+  <p>- The regimen may have an increased likelihood of moderately reducing withdrawal symptoms within 2 hours in patients with similar characteristics.</p>
+  <p>- Reported SAEs: opioid relapse (8.73%) and overdose (1.23%)</p>
+  <p>- Common AEs: drowsiness during usual activity (42%) and anxiety(22%)</p>
+
+  <br>
+
+  <h1>Dispensary Reported Outcomes (DROs):</h1>
+
+  <p>MC Genius retrieved <strong>200 similar DROs</strong> evaluating this cannabis regimen:</p>
+  <p>- Average pharmacist follow-up assessment occured 4.5 days after baseline</p>
+  <p>- Average reduction in Objective Opioid Withdrawal Scale (OOWS) = 0.5 points</p>
+  <p>- Average baseline OOWS = 7/14</p>
+  <p>- Average follow-up OOWS = 6.5/14</p>
+  <p>- Pharmacist recommendation distribution: 150 (75%) recommended different product selection after follow-up; 50 (25%) recommended product continuation.
+    The most commonly cited reason for altering therapy was interference with daily activities (40%)</p>
+
+        </div>
+        </div>
+        </form>
+        </div>
+
+        <div class="main-text">
+          <h1>MC Genius</h1>
+          <h2>Medical Cannabis Wellness Record</h2>
+          <a href="#catalog" class="btn main-btn" onclick="openForm()">Cannabis Data</a>
+          <a href="#catalog" class="btn main-btn" onclick="openForm6()">Clinical Decision Support</a>
+        </div>
+    </header>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
