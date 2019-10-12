@@ -471,11 +471,7 @@ footer h4{
   .menu{
     display: none;
   }
-  .nav{
-    display: flex;
-    padding: 2rem 10rem 0;
-    justify-content: space-between;
-  }
+   
 
 #logo{
   display: block;
