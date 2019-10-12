@@ -1,21 +1,3 @@
-$('.menu').on('click', function (){
-  $(this).toggleClass('active');
-  $('.overlay').toggleClass('menu-open');
-});
-
-$('.nav a').on('click', function (){
-  $(this).removeClass('active');
-  $('overlay').removeClass('menu-open');
-});
-
-$('.button').click(function(){
-    if($(this).hasClass('active')){
-        $(this).removeClass('active')
-    } else {
-        $(this).addClass('active')
-    }
-});
-
 function openForm() {
   document.getElementById("id01").style.display = "block";
 }
