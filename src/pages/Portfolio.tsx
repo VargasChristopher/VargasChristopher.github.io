@@ -177,7 +177,7 @@ const Portfolio = () => {
       icon: TestTube,
       links: {
         demo: "https://devpost.com/software/mc-genius",
-        github: "https://github.com/VargasChristopher/VargasChristopher.github.io/tree/master/src/pages/MC_Genius_Site"
+        github: "https://github.com/VargasChristopher/VargasChristopher.github.io/tree/master/public/MC_Genius_Site"
       },
       featured: false
     },
@@ -196,8 +196,8 @@ const Portfolio = () => {
       category: "Static Site",
       icon: Code2,
       links: {
-        demo: "https://vargaschristopher.github.io/Chaotic_Website/index.html",
-        github: "https://github.com/VargasChristopher/VargasChristopher.github.io/tree/master/src/pages/Chaotic_Website"
+        demo: import.meta.env.BASE_URL + "Chaotic_Website/index.html",
+        github: "https://github.com/VargasChristopher/VargasChristopher.github.io/tree/master/public/Chaotic_Website"
       },
       featured: false
     }
