@@ -2,7 +2,7 @@ name: Deploy (Pages)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]   # <- change to 'main' if that's your default branch
   workflow_dispatch:
 
 permissions:
@@ -24,8 +24,9 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npm run build     # Vite outputs ./dist by default
-      - uses: actions/upload-pages-artifact@v4
+      - run: npm run build        # Vite outputs to ./dist by default
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
