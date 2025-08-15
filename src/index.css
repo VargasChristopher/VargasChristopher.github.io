@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Christopher Vargas Portfolio Design System
+Dark theme with electric blue accents, glassmorphism, and smooth animations
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme base colors */
+    --background: 220 15% 8%;
+    --foreground: 210 40% 98%;
+
+    /* Card and surface colors with subtle transparency */
+    --card: 220 15% 12%;
+    --card-foreground: 210 40% 98%;
+    --card-glass: 220 15% 15%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Electric blue primary palette */
+    --primary: 214 100% 60%;
+    --primary-dark: 214 100% 45%;
+    --primary-light: 214 100% 75%;
+    --primary-foreground: 220 15% 8%;
+
+    /* Secondary grays */
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 215 15% 65%;
+
+    /* Accent colors */
+    --accent: 214 100% 60%;
+    --accent-foreground: 220 15% 8%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 220 15% 25%;
+    --input: 220 15% 18%;
+    --ring: 214 100% 60%;
+
+    /* Glass morphism */
+    --glass-bg: 220 15% 15%;
+    --glass-border: 220 15% 25%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 100% 60%), hsl(214 100% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 8%) 0%, hsl(214 100% 10%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 15% 12%) 0%, hsl(220 15% 15%) 100%);
+
+    /* Shadows and glows */
+    --shadow-lg: 0 20px 40px -12px hsl(220 15% 5% / 0.8);
+    --shadow-glow: 0 0 20px hsl(214 100% 60% / 0.3);
+    --shadow-glow-hover: 0 0 30px hsl(214 100% 60% / 0.5);
+
+    /* Animation and transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Smooth scrolling with reduced motion respect */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Glass morphism component */
+  .glass {
+    background: hsl(var(--glass-bg) / 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+  }
+
+  /* Electric glow effects */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-hover {
+    transition: var(--transition-smooth);
+  }
+
+  .glow-hover:hover {
+    box-shadow: var(--shadow-glow-hover);
+  }
+
+  /* Spring animation for buttons and interactive elements */
+  .spring {
+    transition: var(--transition-spring);
+  }
+
+  .spring:hover {
+    transform: translateY(-2px);
+  }
+
+  .spring:active {
+    transform: translateY(0);
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Hero section background */
+  .hero-bg {
+    background: var(--gradient-hero);
+  }
+
+  /* Card gradient background */
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  /* Navigation link with underline animation */
+  .nav-link {
+    position: relative;
+    transition: var(--transition-smooth);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--gradient-primary);
+    transition: var(--transition-smooth);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Skill badge with glow */
+  .skill-badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+    background: hsl(var(--glass-bg) / 0.6);
+    border: 1px solid hsl(var(--border) / 0.5);
+    transition: var(--transition-smooth);
+  }
+
+  .skill-badge:hover {
+    background: hsl(var(--primary) / 0.1);
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.2);
+  }
+
+  /* Project card tilt effect (disabled for reduced motion) */
+  .project-card {
+    transition: var(--transition-spring);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .project-card:hover {
+      transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateY(-5px);
+    }
+  }
+
+  /* Focus styles for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+}

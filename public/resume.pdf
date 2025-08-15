@@ -1,0 +1,10 @@
+# Placeholder Resume PDF
+
+This file is a placeholder for Christopher Vargas's resume. In a real deployment, this would be replaced with the actual PDF resume file.
+
+To add the real resume:
+1. Save the resume as a PDF file
+2. Replace this file with the actual resume.pdf
+3. Ensure the file name remains "resume.pdf" for the download links to work correctly
+
+The resume download links throughout the site point to "/resume.pdf"
