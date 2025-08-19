@@ -17,26 +17,29 @@ const Navigation = () => {
     { name: "Contact", path: "#contact" },
   ];
 
+  const NAV_OFFSET = 80;
+
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-      
-      // Update active section based on scroll position
-      const sections = navItems.map(item => item.path.substring(1));
-      let currentSection = "home";
-      
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            currentSection = sectionId;
-          }
-        }
-      }
-      
-      setActiveSection(currentSection);
-    };
+  const handleScroll = () => {
+  setScrolled(window.scrollY > 20);
+
+  const sections = navItems.map(item => item.path.substring(1));
+  const probeY = window.scrollY + NAV_OFFSET + 1; // where we consider the “current” line
+  let currentSection = "home";
+
+  for (const id of sections) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    const top = el.offsetTop;
+    const bottom = top + el.offsetHeight;
+    if (probeY >= top && probeY < bottom) {
+      currentSection = id;
+      break;
+    }
+  }
+  setActiveSection(currentSection);
+  };
+
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -47,12 +50,25 @@ const Navigation = () => {
   }, [location]);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
     setIsOpen(false);
+  
+    // Respect reduced-motion
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const behavior: ScrollBehavior = reduce ? "auto" : "smooth";
+  
+    // “Home” should go truly to the very top
+    if (sectionId === "home") {
+      window.scrollTo({ top: 0, behavior });
+      return;
+    }
+  
+    const el = document.getElementById(sectionId);
+    if (!el) return;
+  
+    const y = el.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
+    window.scrollTo({ top: Math.max(0, y), behavior });
   };
+
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -62,7 +78,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button 
-            onClick={() => window.location.reload(true)}
+            onClick={() => scrollToSection('home')}
             className="text-xl font-bold gradient-text focus-ring"
           >
             Christopher Vargas
