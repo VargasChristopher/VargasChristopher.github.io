@@ -241,3 +241,55 @@ img, svg, video, canvas {
   overflow-x: clip;
   overflow-y: visible;
 }
+
+/* ──────────────────────────────────────────────────────────────
+   Light mode: keep electric blue; flip only neutrals to off-white
+   Paste at END of index.css
+   ────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    color-scheme: dark; /* default look = your current dark theme */
+  }
+
+  html.light {
+    color-scheme: light;
+
+    /* Surfaces & text (off-white look) */
+    --background: 210 20% 98%;
+    --foreground: 222 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 25% 10%;
+    --card-glass: 0 0% 100%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 25% 10%;
+
+    /* Keep the electric blue */
+    /* --primary, --primary-dark, --primary-light remain unchanged */
+
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 222 25% 10%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 222 10% 35%;
+
+    --accent: 214 100% 60%;
+    --accent-foreground: 222 25% 10%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 16% 90%;
+    --input: 0 0% 100%;
+    --ring: 214 100% 60%;
+
+    /* Glass morphism on light */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 210 16% 90%;
+
+    /* Light gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(214 100% 97%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+  }
+}

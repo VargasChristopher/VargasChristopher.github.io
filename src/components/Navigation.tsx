@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +16,28 @@ const Navigation = () => {
     { name: "About", path: "#about" },
     { name: "Contact", path: "#contact" },
   ];
+
+  // ── Theme toggle state ───────────────────────────────────────
+  const [isLight, setIsLight] = useState<boolean>(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved === "light") return true;
+    if (saved === "dark") return false;
+    return window.matchMedia?.("(prefers-color-scheme: light)")?.matches ?? false;
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isLight) {
+      root.classList.add("light");
+      localStorage.setItem("theme", "light");
+    } else {
+      root.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+    }
+  }, [isLight]);
+
+  const toggleTheme = () => setIsLight(v => !v);
+  // ─────────────────────────────────────────────────────────────
 
   const NAV_OFFSET = 80;
 
@@ -107,6 +129,18 @@ const Navigation = () => {
                 View Resume
               </a>
             </Button>
+
+            {/* Theme toggle (desktop) */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="focus-ring"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              title={isLight ? "Switch to dark mode" : "Switch to light mode"}
+            >
+              {isLight ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -143,6 +177,17 @@ const Navigation = () => {
                   <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1fb6nPLtFDqmK3q-bjQJaJPzWHh8_NBT1/view?usp=sharing">
                     View Resume
                   </a>
+                </Button>
+
+                {/* Theme toggle (mobile) */}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  onClick={() => { toggleTheme(); setIsOpen(false); }}
+                >
+                  {isLight ? <Moon className="h-4 w-4 mr-2" /> : <Sun className="h-4 w-4 mr-2" />}
+                  {isLight ? "Dark mode" : "Light mode"}
                 </Button>
               </div>
             </div>
