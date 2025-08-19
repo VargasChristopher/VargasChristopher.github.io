@@ -813,7 +813,7 @@ const contactMethods = [
       {/* Contact Section */}
       <section id="contact" className="py-20 overflow-x-clip">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto px-4 sm:px-0">
             {/* Header */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -828,7 +828,7 @@ const contactMethods = [
 
             <div className="grid lg:grid-cols-2 gap-12 w-full max-w-full">
               {/* Contact Form */}
-              <Card className="glass w-full max-w-full overflow-hidden">
+              <Card className="glass w-full max-w-full overflow-hidden mx-4 sm:mx-0">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold flex items-center gap-3">
                     <Send className="h-6 w-6 text-primary" />
@@ -925,7 +925,7 @@ const contactMethods = [
 
               {/* Contact Information */}
               <div className="space-y-8">
-                <Card className="glass w-full max-w-full overflow-hidden">
+                <Card className="glass w-full max-w-full overflow-hidden mx-4 sm:mx-0">
                   <CardHeader>
                     <CardTitle className="text-2xl font-bold">
                       Contact Information
@@ -960,7 +960,7 @@ const contactMethods = [
                 </Card>
 
                 {/* Quick Actions */}
-                <Card className="glass w-full max-w-full overflow-hidden">
+                <Card className="glass w-full max-w-full overflow-hidden mx-4 sm:mx-0">
                   <CardHeader>
                     <CardTitle className="text-xl font-bold">
                       Quick Actions
@@ -1007,7 +1007,7 @@ const contactMethods = [
                 </Card>
 
                 {/* Availability */}
-                <Card className="glass border-primary/20 w-full max-w-full overflow-hidden">
+                <Card className="glass border-primary/20 w-full max-w-full overflow-hidden mx-4 sm:mx-0">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
