@@ -50,24 +50,35 @@ const Navigation = () => {
   }, [location]);
 
   const scrollToSection = (sectionId: string) => {
+    // close mobile menu either way
     setIsOpen(false);
   
-    const behavior: ScrollBehavior = "smooth";
+    // use the real scrolling element (works better than window on some desktops)
+    const scroller = document.scrollingElement || document.documentElement;
   
-    // “Home” should go truly to the very top
+    // get current nav height dynamically (fallback to 64px)
+    const nav = document.querySelector("nav") as HTMLElement | null;
+    const NAV_OFFSET = (nav?.offsetHeight ?? 64) + 8; // small breathing room
+  
+    // Home → top of page
     if (sectionId === "home") {
-      window.scrollTo({ top: 0, behavior });
+      scroller.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
   
+    // Other sections → compute precise top minus sticky header
     const el = document.getElementById(sectionId);
     if (!el) return;
   
-    const y = el.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
-    window.scrollTo({ top: Math.max(0, y), behavior });
+    const y =
+      el.getBoundingClientRect().top +
+      (window.pageYOffset || document.documentElement.scrollTop) -
+      NAV_OFFSET;
+  
+    scroller.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
   };
 
-
+  
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? "glass shadow-lg" : "bg-transparent"
