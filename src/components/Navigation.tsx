@@ -62,7 +62,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button 
-            onClick={() => window.location.reload()}
+            onClick={() => window.location.reload(true)}
             className="text-xl font-bold gradient-text focus-ring"
           >
             Christopher Vargas
