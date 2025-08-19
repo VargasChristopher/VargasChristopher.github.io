@@ -52,9 +52,7 @@ const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
   
-    // Respect reduced-motion
-    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    const behavior: ScrollBehavior = reduce ? "auto" : "smooth";
+    const behavior: ScrollBehavior = "smooth";
   
     // “Home” should go truly to the very top
     if (sectionId === "home") {
