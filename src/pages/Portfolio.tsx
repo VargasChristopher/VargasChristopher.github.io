@@ -303,7 +303,7 @@ const contactMethods = [
   return (
     <div className="min-h-screen">
       {/* Home Section */}
-      <section id="home" className="hero-bg min-h-screen flex items-center relative overflow-hidden">
+      <section id="home" className="hero-bg min-h-screen flex items-center relative overflow-hidden pb-16 md:pb-24">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMjkiIGN5PSIyOSIgcj0iMSI+PC9jaXJjbGU+PC9nPjwvZz48L3N2Zz4=')] opacity-50"></div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -367,7 +367,7 @@ const contactMethods = [
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-card">
+      <section id="experience" className="pt-28 pb-20 bg-card scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
@@ -456,7 +456,7 @@ const contactMethods = [
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20">
+      <section id="projects" className="py-20 scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
@@ -630,7 +630,7 @@ const contactMethods = [
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-card">
+      <section id="about" className="py-20 bg-card scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
@@ -811,8 +811,8 @@ const contactMethods = [
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 overflow-x-clip">
-        <div className="container mx-auto px-4">
+      <section id="contact" className="py-20 overflow-x-clip scroll-mt-24">
+        <div className="container mx-auto">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
