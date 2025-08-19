@@ -145,6 +145,16 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <Button
+              variant="ghost"
+              size="icon"
+              className="focus-ring"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              title={isLight ? "Switch to dark mode" : "Switch to light mode"}
+          >
+              {isLight ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+          </Button>
+          <Button
             variant="ghost"
             size="sm"
             className="md:hidden focus-ring"
@@ -177,17 +187,6 @@ const Navigation = () => {
                   <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1fb6nPLtFDqmK3q-bjQJaJPzWHh8_NBT1/view?usp=sharing">
                     View Resume
                   </a>
-                </Button>
-
-                {/* Theme toggle (mobile) */}
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full"
-                  onClick={() => { toggleTheme(); setIsOpen(false); }}
-                >
-                  {isLight ? <Moon className="h-4 w-4 mr-2" /> : <Sun className="h-4 w-4 mr-2" />}
-                  {isLight ? "Dark mode" : "Light mode"}
                 </Button>
               </div>
             </div>
