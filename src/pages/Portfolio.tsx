@@ -826,7 +826,7 @@ const contactMethods = [
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 w-full">
+            <div className="grid lg:grid-cols-2 gap-12 w-full overflow-hidden">
               {/* Contact Form */}
               <Card className="glass w-full overflow-hidden">
                 <CardHeader>
@@ -924,7 +924,7 @@ const contactMethods = [
               </Card>
 
               {/* Contact Information */}
-              <div className="space-y-8">
+              <div className="space-y-8 overflow-hidden">
                 <Card className="glass w-full overflow-hidden">
                   <CardHeader>
                     <CardTitle className="text-2xl font-bold">
