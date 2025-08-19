@@ -56,7 +56,6 @@ const Navigation = () => {
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
     const behavior: ScrollBehavior = reduce ? "auto" : "smooth";
   
-    // “Home” should go truly to the very top
     if (sectionId === "home") {
       window.scrollTo({ top: 0, behavior });
       return;
