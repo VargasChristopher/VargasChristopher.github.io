@@ -811,7 +811,7 @@ const contactMethods = [
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 overflow-x-clip">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
@@ -826,9 +826,9 @@ const contactMethods = [
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-12 w-full max-w-full">
               {/* Contact Form */}
-              <Card className="glass">
+              <Card className="glass w-full max-w-full overflow-hidden">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold flex items-center gap-3">
                     <Send className="h-6 w-6 text-primary" />
@@ -925,7 +925,7 @@ const contactMethods = [
 
               {/* Contact Information */}
               <div className="space-y-8">
-                <Card className="glass">
+                <Card className="glass w-full max-w-full overflow-hidden">
                   <CardHeader>
                     <CardTitle className="text-2xl font-bold">
                       Contact Information
@@ -943,14 +943,14 @@ const contactMethods = [
                           href={method.href}
                           target={method.href.startsWith('http') ? '_blank' : undefined}
                           rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          className="flex items-center gap-4 p-4 rounded-lg border border-border hover:bg-primary/5 hover:border-primary/20 transition-all spring focus-ring"
+                          className="flex w-full items-center gap-4 p-4 rounded-lg border border-border hover:bg-primary/5 hover:border-primary/20 transition-all spring focus-ring"
                         >
                           <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
                             <method.icon className="h-5 w-5 text-primary" />
                           </div>
-                          <div>
+                          <div className="min-w-0">
                             <h4 className="font-semibold text-foreground">{method.label}</h4>
-                            <p className="text-primary font-medium">{method.value}</p>
+                            <p className="text-primary font-medium truncate break-words">{method.value}</p>
                             <p className="text-sm text-muted-foreground">{method.description}</p>
                           </div>
                         </a>
@@ -960,7 +960,7 @@ const contactMethods = [
                 </Card>
 
                 {/* Quick Actions */}
-                <Card className="glass">
+                <Card className="glass w-full max-w-full overflow-hidden">
                   <CardHeader>
                     <CardTitle className="text-xl font-bold">
                       Quick Actions
@@ -1007,7 +1007,7 @@ const contactMethods = [
                 </Card>
 
                 {/* Availability */}
-                <Card className="glass border-primary/20">
+                <Card className="glass border-primary/20 w-full max-w-full overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
