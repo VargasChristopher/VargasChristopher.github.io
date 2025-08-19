@@ -367,7 +367,7 @@ const contactMethods = [
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="pt-28 pb-20 bg-card scroll-mt-24">
+      <section id="experience" className="py-20 bg-card scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
@@ -812,8 +812,8 @@ const contactMethods = [
 
       {/* Contact Section */}
       <section id="contact" className="py-20 overflow-x-clip scroll-mt-24">
-        <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
