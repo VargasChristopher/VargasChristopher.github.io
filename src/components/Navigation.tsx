@@ -147,7 +147,7 @@ const Navigation = () => {
           <Button
               variant="ghost"
               size="icon"
-              className="focus-ring"
+              className="md:hidden focus-ring"
               onClick={toggleTheme}
               aria-label="Toggle theme"
               title={isLight ? "Switch to dark mode" : "Switch to light mode"}
