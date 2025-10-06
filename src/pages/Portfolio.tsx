@@ -23,6 +23,7 @@ import {
   Zap,
   GraduationCap,
   Database,
+  Map,
   Cloud,
   TestTube,
   Mail,
@@ -63,6 +64,11 @@ const Portfolio = () => {
       description: "Tripled daily ticket resolutions with proprietary API integration"
     },
     {
+      icon: Award,
+      title: "2nd Place Google DevFest25 Hackathon Winner",
+      description: "GridWatch - Real-time Smart City dashboard powered by Agentic AI"
+    },
+    {
       icon: Building2, 
       title: "Full-Stack Intern @ Lockheed Martin",
       description: "Built real-time security monitoring with Splunk"
@@ -76,31 +82,33 @@ const Portfolio = () => {
 
   // Experience section data
   const experiences = [
-      {
+    {
       company: "Apollo Technologies, LLC",
       role: "Founder & CEO",
       location: "Virtual",
       period: "Aug 2024 - Present",
       description:
-        "Founded an agency focused on full-stack web, e-commerce, and AI integrations while exploring smart home/building infrastructure and helpful AI assistants under the Apollo Tech brand.",
+        "Building applied AI + IoT for smart homes, buildings, and city operations—agentic assistants, voice interfaces, and sensor-to-dashboard automation—while taking selective web work to bootstrap R&D.",
       achievements: [
-        "Shipped a Shopify storefront (905's Finest) with Stripe/PayPal, Meta Pixel, and Google Analytics; delivered client training and baseline SEO handoff.",
-        "Built Apollo AI, an Alexa + GPT-4o-mini assistant; won PatriotHacks 2024 “Most Likely to Become a Startup.”",
-        "Secured paid engagements with clients using a lightweight CRM/outreach workflow and sales workflows for client projects."
+        "Repositioned the business from general web services to a smart infrastructure focus; authored the initial product spec and architecture for the company.",
+        "Built Apollo AI (Alexa + GPT-4o-mini) as the voice layer for status queries and hands-free automations; won PatriotHacks 2024 “Most Likely to Become a Startup.”",
+        "Shipped a Shopify storefront (905's Finest) with Stripe/PayPal, Meta Pixel, and Google Analytics to fund early R&D; delivered client training and baseline SEO handoff.",
+        "Prototyped GridWatch, a smart-city outage and signal monitoring proof-of-concept for Apollo Tech, aggregating utility APIs, IoT sensors, and citizen reports into a live heatmap and alert queue."
       ],
       stack: [
         "React",
         "TypeScript",
         "Node.js",
         "AWS",
+        "Alexa Skills Kit",
+        "OpenAI API",
         "Shopify",
         "Stripe",
-        "OpenAI API",
         "Google Analytics",
         "Meta Pixel"
       ],
       metrics:
-        "Bootstrapped operation; shipped first storefront in about 6 weeks and an award-winning voice AI MVP."
+        "Bootstrapped; shipped first storefront in 6 weeks and an award-winning voice-assistant MVP supporting the smart-infrastructure roadmap."
     },
     {
       company: "Amazon.com, Inc",
@@ -132,6 +140,22 @@ const Portfolio = () => {
 
   // Projects section data
   const projects = [
+    {
+      title: "GridWatch",
+      subtitle: "Agentic AI Civic Dashboard",
+      description: "Real-time city monitoring platform with heatmap + prioritized incident feed (traffic, outages, crime, environment). Built in 7 hours; won 2nd place at Google's DevFest25 DC.",
+      problem: "City signal is fragmented across utilities, agencies, and social feeds, making it hard to see issues fast and act on them.",
+      approach: "Orchestrated specialized agents via Google ADK (fan-out/fan-in) and normalized strict-JSON outputs; frontend renders a Leaflet heatmap, incident cards, KPIs, and a print-ready report.",
+      result: "MVP shipped during the hackathon, placed 2nd overall, and earned an invite to present at DC Startup & Tech Week.",
+      stack: ["Google ADK", "Google Cloud", "Google AI Studio", "Python", "Firebase"],
+      category: "Agentic AI",
+      icon: Map,
+      links: {
+        demo: "https://gridwatch.dev/",
+        github: "https://github.com/VargasChristopher/GridWatch"
+      },
+      featured: true
+    },
     {
       title: "Apollo AI",
       subtitle: "GPT-4o-mini Powered Alexa Skill",
